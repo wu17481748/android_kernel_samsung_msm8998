@@ -2,10 +2,7 @@ name: Samsung SDM8898 Kernel Builder
 
 on:
   push:
-    branches: [ pp ]
-  pull_request:
-    branches: [ pp ]
-
+    workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
