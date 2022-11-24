@@ -6,8 +6,8 @@ BUILD_WHERE=$(pwd)
 BUILD_KERNEL_OUT_DIR=$BUILD_WHERE/out
 BUILD_CROSS_COMPILE=$BUILD_WHERE/../PLATFORM/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-
 BUILD_JOB_NUMBER=`grep processor /proc/cpuinfo|wc -l`
-ANDROID_MAJOR_VERSION=p
-PLATFORM_VERSION=9.0.0
+export ANDROID_MAJOR_VERSION=p
+export PLATFORM_VERSION=9.0
 
 BUILD_COMMAND=$1
 CLEAN_OPTION=$2
