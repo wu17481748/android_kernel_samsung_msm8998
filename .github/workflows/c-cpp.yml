@@ -1,23 +1,19 @@
-name: C/C++ CI
+name: Samsung SDM8898 Kernel
 
 on:
-  push:
-    branches: [ "pp" ]
-  pull_request:
-    branches: [ "pp" ]
-
+  push: 
+  workflow_dispatch:
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v4
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+    - uses: actions/checkout@v2
+    - name: aarch64 toolchain
+      run: mkdir -p ../PLATFORM/prebuilts/gcc/linux-x86/aarch64 && git clone  https://github.com/djb77/aarch64-linux-android-4.9 ../PLATFORM/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9
+    - name: make kernel for dream2qltechn
+      run: ./build_kernel_64.sh dream2qlte_chn_open -c
+
+    - uses: actions/upload-artifact@v1
+      with:
+        name: dream2qltechn
+        path: build/bin/dream2qltechn
