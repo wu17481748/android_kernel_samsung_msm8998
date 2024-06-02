@@ -16,7 +16,7 @@ jobs:
 
         
     - name: aarch64 toolchain
-      run: sudo rm /bin/python && sudo ln -s /bin/python2.7 /bin/python && mkdir -p ../PLATFORM/prebuilts/gcc/linux-x86/aarch64 && git clone  https://github.com/djb77/aarch64-linux-android-4.9 ../PLATFORM/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9
+      run: mkdir -p ../PLATFORM/prebuilts/gcc/linux-x86/aarch64 && git clone  https://github.com/djb77/aarch64-linux-android-4.9 ../PLATFORM/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9
 
 
     - name: make kernel for dream2qltechn
