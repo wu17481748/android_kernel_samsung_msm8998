@@ -38,7 +38,7 @@ jobs:
     - name: 下载内核源码
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
-        git https://github.com/wu17481748/android_kernel_samsung_msm8998 android-kernel
+        git clone https://github.com/wu17481748/android_kernel_samsung_msm8998 android-kernel
         cd android-kernel
 
 
