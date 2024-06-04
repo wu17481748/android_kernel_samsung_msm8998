@@ -114,6 +114,8 @@ FUNC_BUILD_KERNEL()
     fi
 
 	FUNC_CLEAN_DTB
+    curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.8.0
+    echo "CONFIG_OVERLAY_FS=y" >> arch/arm64/configs/$KERNEL_DEFCONFIG
     echo "CONFIG_KSU=y" >> arch/arm64/configs/$KERNEL_DEFCONFIG
     sed -i '/CONFIG_LOCALVERSION/d' arch/arm64/configs/$KERNEL_DEFCONFIG
     echo "CONFIG_LOCALVERSION="-闲鱼-你好JS-Build"" >> arch/arm64/configs/$KERNEL_DEFCONFIG
